@@ -65,6 +65,13 @@ A **task-oriented walkthrough**, not a reference manual. Every page is one user 
 
 Read in order the first time; jump straight to a task once you're set up.
 
+## Beyond the basics
+
+Once the 6 core flows above are working, two extras worth a look:
+
+- [**Conditional orders (TP/SL)**](/flows/conditional-orders) — attach a take-profit and a stop-loss to any place in one call. The engine arms them on fill, fires them on price-cross, cancels the leftover.
+- [**Public market data**](/flows/market-data) — five no-auth endpoints for prices, orderbook depth, recent trades, and candles. Everything a market detail page needs.
+
 ## Reference pages
 
 - [Auth & request signing](/reference/auth-signing) — the HMAC scheme every signed call uses.

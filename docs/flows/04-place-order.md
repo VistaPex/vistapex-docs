@@ -110,6 +110,12 @@ body = {
 signed_request("POST", "/v1/orders/cancel-and-place", body)
 ```
 
+## Want to attach a take-profit / stop-loss?
+
+`POST /v1/orders` also accepts `tp_price` and `sl_price` fields — fill them and the engine arms a bracket against the resulting position automatically.
+
+→ [Conditional orders (TP/SL)](./conditional-orders)
+
 ## Next
 
 → [View your orders](./05-view-orders)

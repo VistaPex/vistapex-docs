@@ -59,6 +59,14 @@ export default defineConfig({
         ],
       },
       {
+        text: 'Beyond the basics',
+        collapsed: false,
+        items: [
+          { text: 'Conditional orders (TP/SL)', link: '/flows/conditional-orders' },
+          { text: 'Public market data', link: '/flows/market-data' },
+        ],
+      },
+      {
         text: 'Reference',
         collapsed: false,
         items: [
