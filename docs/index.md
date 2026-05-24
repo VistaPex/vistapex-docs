@@ -72,7 +72,16 @@ Once the 6 core flows above are working, two extras worth a look:
 - [**Conditional orders (TP/SL)**](/flows/conditional-orders) — attach a take-profit and a stop-loss to any place in one call. The engine arms them on fill, fires them on price-cross, cancels the leftover.
 - [**Public market data**](/flows/market-data) — five no-auth endpoints for prices, orderbook depth, recent trades, and candles. Everything a market detail page needs.
 
+## Account & identity
+
+For backend services, security audits, and multi-account setups:
+
+- [**Refresh & revoke sessions**](/flows/sessions) — extend a session, list active ones across devices, kill a compromised one (or all of them).
+- [**Long-lived API keys**](/flows/api-keys) — mint scoped credentials for bots and analytics services. Restrict by permission, market, and order size.
+- [**Manage your profile**](/flows/profile) — read your identity bundle, bind a wallet, set a default trading account.
+
 ## Reference pages
 
 - [Auth & request signing](/reference/auth-signing) — the HMAC scheme every signed call uses.
 - [Contract addresses & RPCs](/reference/contracts) — current testnet `DepositPool` + `MintableUSDC` addresses.
+- [Error code catalog](/reference/error-codes) — every numeric `code` you might see, with what triggers it and how to fix.

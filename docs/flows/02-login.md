@@ -118,6 +118,12 @@ For TypeScript / Rust / Go signers, see the [auth-signing reference](../referenc
 | `503 privy auth temporarily unavailable` | `{"code":1015,...}` | Privy JWKS unreachable — retry with backoff |
 | `429 login rate limit exceeded` | `{"code":1006,...}` | Too many login attempts from this IP — wait ~1 min |
 
+## Related
+
+- [Refresh & revoke sessions](./sessions) — extend a session before expiry, list active sessions, revoke compromised ones.
+- [Long-lived API keys](./api-keys) — mint scoped credentials for backend services and bots (vs the ~1 h session keys above).
+- [Manage your profile](./profile) — `/v1/me`, default trading account, wallet binding.
+
 ## Next
 
 → [Deposit USDC](./03-deposit)

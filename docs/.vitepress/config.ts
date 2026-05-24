@@ -67,11 +67,21 @@ export default defineConfig({
         ],
       },
       {
+        text: 'Account & identity',
+        collapsed: false,
+        items: [
+          { text: 'Refresh & revoke sessions', link: '/flows/sessions' },
+          { text: 'Long-lived API keys', link: '/flows/api-keys' },
+          { text: 'Manage your profile', link: '/flows/profile' },
+        ],
+      },
+      {
         text: 'Reference',
         collapsed: false,
         items: [
           { text: 'Contract addresses & RPCs', link: '/reference/contracts' },
           { text: 'Auth & request signing', link: '/reference/auth-signing' },
+          { text: 'Error code catalog', link: '/reference/error-codes' },
         ],
       },
     ],
