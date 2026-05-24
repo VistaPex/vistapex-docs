@@ -1,0 +1,71 @@
+---
+layout: home
+
+hero:
+  name: VistaPex
+  text: The start of a new dawn in perps trading.
+  tagline: Mint test USDC, log in, deposit, trade, withdraw. REST + on-chain, end-to-end.
+  image:
+    src: /vistapex/vistapex_logo/default.svg
+    alt: VistaPex
+  actions:
+    - theme: brand
+      text: Start with mint
+      link: /flows/01-mint-usdc
+    - theme: alt
+      text: API reference
+      link: /reference/contracts
+
+features:
+  - icon: 💧
+    title: 1. Mint testnet USDC
+    details: Get 1,000 testnet USDC from the public faucet. One on-chain call. Required before you can deposit.
+    link: /flows/01-mint-usdc
+    linkText: How to mint →
+
+  - icon: 🔑
+    title: 2. Log in
+    details: Sign in via Privy embedded wallet and exchange your JWT for a per-session API key + secret.
+    link: /flows/02-login
+    linkText: How to log in →
+
+  - icon: 📥
+    title: 3. Deposit
+    details: Approve the DepositPool, send USDC, watch your `cross_balance` update.
+    link: /flows/03-deposit
+    linkText: How to deposit →
+
+  - icon: 📈
+    title: 4. Place an order
+    details: Submit a limit or market order. Signed HMAC request. See what the wire format looks like.
+    link: /flows/04-place-order
+    linkText: How to place →
+
+  - icon: 📋
+    title: 5. View your orders
+    details: Live open orders, full history (with rejections), positions, balance — every read you need.
+    link: /flows/05-view-orders
+    linkText: How to view →
+
+  - icon: 📤
+    title: 6. Withdraw
+    details: Request a withdrawal off the engine; the settler pays you out on-chain in ~6 s.
+    link: /flows/06-withdraw
+    linkText: How to withdraw →
+---
+
+## What this guide is
+
+A **task-oriented walkthrough**, not a reference manual. Every page is one user task with:
+
+1. **Prereqs** — what you need before you start.
+2. **Numbered steps** — copy-paste-able `curl` / `cast` commands.
+3. **What success looks like** — exact response shape so you know it worked.
+4. **Common errors** — what each rejection message means and how to fix it.
+
+Read in order the first time; jump straight to a task once you're set up.
+
+## Reference pages
+
+- [Auth & request signing](/reference/auth-signing) — the HMAC scheme every signed call uses.
+- [Contract addresses & RPCs](/reference/contracts) — current testnet `DepositPool` + `MintableUSDC` addresses.

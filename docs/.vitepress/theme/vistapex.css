@@ -1,0 +1,122 @@
+/*
+ * VistaPex docs theme — mirrors tokens from perps-interface
+ * (src/app/globals.scss + src/styles/_variables.scss).
+ *
+ * Primary: #DDFF33 (neon lime), on near-black surfaces; Inter typeface.
+ */
+
+@import url('https://rsms.me/inter/inter.css');
+
+:root {
+  /* Brand */
+  --vp-c-brand-1: #DDFF33;
+  --vp-c-brand-2: #e7ff5c;
+  --vp-c-brand-3: #c9eb1f;
+  --vp-c-brand-soft: rgba(221, 255, 51, 0.16);
+
+  /* Match VitePress's semantic brand tokens to ours */
+  --vp-c-brand: var(--vp-c-brand-1);
+  --vp-c-brand-light: var(--vp-c-brand-2);
+  --vp-c-brand-lighter: var(--vp-c-brand-2);
+  --vp-c-brand-dark: var(--vp-c-brand-3);
+  --vp-c-brand-darker: var(--vp-c-brand-3);
+
+  /* Typography — Inter, same stack as the app */
+  --vp-font-family-base: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  --vp-font-family-mono: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas,
+    'Liberation Mono', monospace;
+}
+
+/* ── Dark mode (default for the app) ───────────────────────────────────── */
+.dark {
+  /* Elevation palette — near-black, matches _variables.scss */
+  --vp-c-bg: #0a0a0b;
+  --vp-c-bg-alt: #060607;
+  --vp-c-bg-elv: #111214;
+  --vp-c-bg-soft: #1a1b1e;
+
+  /* Borders — opacity-based whites */
+  --vp-c-divider: rgba(255, 255, 255, 0.10);
+  --vp-c-gutter: rgba(255, 255, 255, 0.06);
+  --vp-c-border: rgba(255, 255, 255, 0.18);
+
+  /* Text hierarchy */
+  --vp-c-text-1: #ffffff;
+  --vp-c-text-2: rgba(255, 255, 255, 0.8);
+  --vp-c-text-3: #a5a5a6;
+
+  /* Brand contrast on dark — primary chip needs near-black text */
+  --vp-button-brand-text: #0a0a0b;
+  --vp-button-brand-hover-text: #0a0a0b;
+  --vp-button-brand-active-text: #0a0a0b;
+  --vp-button-brand-bg: var(--vp-c-brand-1);
+  --vp-button-brand-hover-bg: var(--vp-c-brand-2);
+  --vp-button-brand-active-bg: var(--vp-c-brand-3);
+  --vp-button-brand-border: var(--vp-c-brand-1);
+  --vp-button-brand-hover-border: var(--vp-c-brand-2);
+
+  /* Code blocks slightly darker than surface */
+  --vp-code-block-bg: #060607;
+
+  /* Hero name uses the brand */
+  --vp-home-hero-name-color: var(--vp-c-brand-1);
+  --vp-home-hero-name-background: var(--vp-c-brand-1);
+}
+
+/* ── Light mode — inverted with brand preserved ────────────────────────── */
+:root:not(.dark) {
+  --vp-c-bg: #ffffff;
+  --vp-c-bg-alt: #f5f6f8;
+  --vp-c-bg-elv: #ffffff;
+  --vp-c-bg-soft: #f0f1f3;
+
+  /* On white, neon lime needs to be darkened to read — clamp the foreground.
+     Buttons still get the bright fill (with dark text) for brand consistency. */
+  --vp-c-brand-1: #6b8a00;
+  --vp-c-brand-2: #7da300;
+  --vp-c-brand-3: #5a7400;
+
+  --vp-button-brand-text: #0a0a0b;
+  --vp-button-brand-hover-text: #0a0a0b;
+  --vp-button-brand-active-text: #0a0a0b;
+  --vp-button-brand-bg: #DDFF33;
+  --vp-button-brand-hover-bg: #e7ff5c;
+  --vp-button-brand-active-bg: #c9eb1f;
+
+  --vp-home-hero-name-color: #6b8a00;
+}
+
+/* Body background — subtle radial glow from the brand, like the app */
+.dark body {
+  background:
+    radial-gradient(ellipse 120% 70% at 50% -8%, rgba(221, 255, 51, 0.10), transparent 60%),
+    var(--vp-c-bg);
+}
+
+/* Selection in brand */
+::selection {
+  background: rgba(221, 255, 51, 0.25);
+  color: inherit;
+}
+
+/* Slimmer scrollbars — match the app */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.15); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(255, 255, 255, 0.30); }
+:root:not(.dark) ::-webkit-scrollbar-thumb { background: rgba(0, 0, 0, 0.20); }
+:root:not(.dark) ::-webkit-scrollbar-thumb:hover { background: rgba(0, 0, 0, 0.35); }
+
+/* Hero name letter-spacing tightened to match the wordmark */
+.VPHero .name { letter-spacing: -0.02em; }
+
+/* Header wordmark — fixed height, breathing room from nav */
+.VPNavBarTitle .logo {
+  height: 22px;
+  width: auto;
+  margin-right: 8px;
+}
+@media (min-width: 960px) {
+  .VPNavBarTitle .logo { height: 24px; }
+}
