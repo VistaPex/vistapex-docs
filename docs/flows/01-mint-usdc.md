@@ -12,18 +12,18 @@ The testnet uses a custom ERC-20 called `MintableUSDC` (NOT Circle USDC). It has
 
 ## Prereqs
 
-- Any wallet with some Arbitrum-Sepolia ETH for gas (~0.001 ETH is plenty).
+- Any wallet with some Avalanche Fuji AVAX for gas (~0.05 AVAX is plenty).
 - The `cast` CLI from [Foundry](https://book.getfoundry.sh/getting-started/installation), or any tool that can send a transaction (ethers.js, viem, MetaMask, etc.).
 
-If you don't have Arbitrum-Sepolia ETH, get some from an Arbitrum faucet first:
-- <https://faucet.quicknode.com/arbitrum/sepolia>
-- <https://www.alchemy.com/faucets/arbitrum-sepolia>
+If you don't have Avalanche Fuji AVAX, get some from an Avalanche faucet first:
+- <https://faucet.quicknode.com/avalanche/fuji>
+- <https://core.app/tools/testnet-faucet/>
 
 ## Step 1 — call `faucetMint`
 
 ```bash
-USDC=0xd99b55120F9ebcc38058b23E8Eb38C56A470f2cD
-RPC=https://sepolia-rollup.arbitrum.io/rpc
+USDC=0x77816fef2E06a1c054F9CbdA3bF82De5D30f8FDA
+RPC=https://api.avax-test.network/ext/bc/C/rpc
 
 cast send $USDC "faucetMint(uint256)" 1000000000 \
   --rpc-url $RPC \
@@ -38,8 +38,8 @@ cast send $USDC "faucetMint(uint256)" 1000000000 \
 ## Step 2 — verify your balance
 
 ```bash
-USDC=0xd99b55120F9ebcc38058b23E8Eb38C56A470f2cD
-RPC=https://sepolia-rollup.arbitrum.io/rpc
+USDC=0x77816fef2E06a1c054F9CbdA3bF82De5D30f8FDA
+RPC=https://api.avax-test.network/ext/bc/C/rpc
 YOUR_ADDR=0xYourAddressHere
 
 cast call $USDC "balanceOf(address)(uint256)" $YOUR_ADDR --rpc-url $RPC
@@ -52,7 +52,7 @@ The `cast send` prints a transaction receipt:
 ```
 status               1 (success)
 transactionHash      0xabc...
-to                   0xd99b55120F9ebcc38058b23E8Eb38C56A470f2cD
+to                   0x77816fef2E06a1c054F9CbdA3bF82De5D30f8FDA
 ```
 
 The `balanceOf` call returns `1000000000` (= 1,000 USDC).

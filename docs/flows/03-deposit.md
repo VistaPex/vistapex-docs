@@ -30,9 +30,9 @@ You can deposit *to* any trading_account_id, but you can only *withdraw from* an
 ## Step 1 — approve
 
 ```bash
-USDC=0xd99b55120F9ebcc38058b23E8Eb38C56A470f2cD
-POOL=0xe144d2A3DE21bc48991bDEB4ade6DdE6901bcDC6
-RPC=https://sepolia-rollup.arbitrum.io/rpc
+USDC=0x77816fef2E06a1c054F9CbdA3bF82De5D30f8FDA
+POOL=0x94924D59d37fd3fd1f6D5C5cEDA3a1F646e2ABe9
+RPC=https://api.avax-test.network/ext/bc/C/rpc
 
 # Approve 100 USDC for deposit (one-time, or do MAX_UINT256 to skip future approvals).
 cast send $USDC "approve(address,uint256)" $POOL 100000000 \

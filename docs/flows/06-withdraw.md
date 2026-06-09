@@ -95,8 +95,8 @@ pending  →  failed      (settler ran out of gas, RPC down, etc.)
 ### Option C — on-chain directly
 
 ```bash
-POOL=0xe144d2A3DE21bc48991bDEB4ade6DdE6901bcDC6
-RPC=https://sepolia-rollup.arbitrum.io/rpc
+POOL=0x94924D59d37fd3fd1f6D5C5cEDA3a1F646e2ABe9
+RPC=https://api.avax-test.network/ext/bc/C/rpc
 
 cast call $POOL "isWithdrawalSettled(uint256)(bool)" 1779526510 --rpc-url $RPC
 # returns `true` once the on-chain tx confirms.
@@ -113,7 +113,7 @@ After ~6 seconds:
 
 ```bash
 # Verify the recipient got it
-USDC=0xd99b55120F9ebcc38058b23E8Eb38C56A470f2cD
+USDC=0x77816fef2E06a1c054F9CbdA3bF82De5D30f8FDA
 DEST=0xD77215d8EB6Ec20C3552D1b90264d7693F706b46
 
 cast call $USDC "balanceOf(address)(uint256)" $DEST --rpc-url $RPC

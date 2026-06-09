@@ -6,17 +6,17 @@ Current testnet deployment. Mainnet addresses will be added at launch.
 
 | Field | Value |
 |---|---|
-| Network | **Arbitrum Sepolia** (chain id `421614`) |
-| Public RPC | `https://sepolia-rollup.arbitrum.io/rpc` |
-| Block explorer | <https://sepolia.arbiscan.io> |
-| Gas token | ETH (Arbitrum-Sepolia testnet ETH) |
+| Network | **Avalanche Fuji** (chain id `43113`) |
+| Public RPC | `https://api.avax-test.network/ext/bc/C/rpc` |
+| Block explorer | <https://testnet.snowtrace.io> |
+| Gas token | AVAX (Avalanche Fuji testnet AVAX) |
 
 ## Contracts
 
 | Contract | Address | Role |
 |---|---|---|
-| **MintableUSDC** | [`0xd99b55120F9ebcc38058b23E8Eb38C56A470f2cD`](https://sepolia.arbiscan.io/address/0xd99b55120F9ebcc38058b23E8Eb38C56A470f2cD) | Testnet ERC-20 USDC (6 decimals). Public `faucetMint` for 1k USDC/hour per address. |
-| **DepositPool** | [`0xe144d2A3DE21bc48991bDEB4ade6DdE6901bcDC6`](https://sepolia.arbiscan.io/address/0xe144d2A3DE21bc48991bDEB4ade6DdE6901bcDC6) | Holds deposited USDC; on-chain settlement target for withdrawals. |
+| **MintableUSDC** | [`0x77816fef2E06a1c054F9CbdA3bF82De5D30f8FDA`](https://testnet.snowtrace.io/address/0x77816fef2E06a1c054F9CbdA3bF82De5D30f8FDA) | Testnet ERC-20 USDC (6 decimals). Public `faucetMint` for 1k USDC/hour per address. |
+| **DepositPool** | [`0x94924D59d37fd3fd1f6D5C5cEDA3a1F646e2ABe9`](https://testnet.snowtrace.io/address/0x94924D59d37fd3fd1f6D5C5cEDA3a1F646e2ABe9) | Holds deposited USDC; on-chain settlement target for withdrawals. |
 
 ## API endpoints
 
@@ -28,10 +28,10 @@ Current testnet deployment. Mainnet addresses will be added at launch.
 ## Quick reference — useful `cast` commands
 
 ```bash
-RPC=https://sepolia-rollup.arbitrum.io/rpc
+RPC=https://api.avax-test.network/ext/bc/C/rpc
 
 # === MintableUSDC ===
-USDC=0xd99b55120F9ebcc38058b23E8Eb38C56A470f2cD
+USDC=0x77816fef2E06a1c054F9CbdA3bF82De5D30f8FDA
 
 # Mint 1k USDC to yourself (public, no admin needed; 1h cooldown per addr)
 cast send $USDC "faucetMint(uint256)" 1000000000 --rpc-url $RPC --private-key $YOUR_KEY
@@ -44,7 +44,7 @@ cast call $USDC "faucetPerCallCap()(uint256)" --rpc-url $RPC
 cast call $USDC "faucetCooldownSeconds()(uint256)" --rpc-url $RPC
 
 # === DepositPool ===
-POOL=0xe144d2A3DE21bc48991bDEB4ade6DdE6901bcDC6
+POOL=0x94924D59d37fd3fd1f6D5C5cEDA3a1F646e2ABe9
 
 # Approve the pool to spend USDC (one-time per (token, spender) per amount)
 cast send $USDC "approve(address,uint256)" $POOL 100000000 --rpc-url $RPC --private-key $YOUR_KEY
