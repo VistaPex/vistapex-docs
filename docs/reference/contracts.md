@@ -1,8 +1,24 @@
 # Contract addresses & RPCs
 
-Current testnet deployment. Mainnet addresses will be added at launch.
+## Mainnet
 
-## Network
+| Field | Value |
+|---|---|
+| Network | **Avalanche C-Chain** (chain id `43114`) |
+| Public RPC | `https://api.avax.network/ext/bc/C/rpc` |
+| Block explorer | <https://snowtrace.io> |
+
+| Contract | Address | Role |
+|---|---|---|
+| **USDC** (Circle, native) | [`0xB97EF9Ef8734C71904D8002F8b6Bc66Dd9c48a6E`](https://snowtrace.io/address/0xB97EF9Ef8734C71904D8002F8b6Bc66Dd9c48a6E) | Collateral (6 decimals). |
+| **DepositPool** | [`0x4D1bE1E2EdB9d6053d6054Ecf343d232B16f146F`](https://snowtrace.io/address/0x4D1bE1E2EdB9d6053d6054Ecf343d232B16f146F) | Holds deposited USDC; on-chain settlement target for withdrawals. |
+| **PerpsStateVerifier** | [`0x29Ca68cbE61CA9378C5564e1c5041270e1A93c9B`](https://snowtrace.io/address/0x29Ca68cbE61CA9378C5564e1c5041270e1A93c9B) | Verifies batch proofs; stores the latest proven state root. See [Proofs & custody](./proofs). |
+
+## Testnet
+
+The `cast` examples below use the testnet.
+
+### Network
 
 | Field | Value |
 |---|---|
@@ -11,14 +27,14 @@ Current testnet deployment. Mainnet addresses will be added at launch.
 | Block explorer | <https://testnet.snowtrace.io> |
 | Gas token | AVAX (Avalanche Fuji testnet AVAX) |
 
-## Contracts
+### Contracts
 
 | Contract | Address | Role |
 |---|---|---|
 | **MintableUSDC** | [`0x77816fef2E06a1c054F9CbdA3bF82De5D30f8FDA`](https://testnet.snowtrace.io/address/0x77816fef2E06a1c054F9CbdA3bF82De5D30f8FDA) | Testnet ERC-20 USDC (6 decimals). Public `faucetMint` for 1k USDC/hour per address. |
-| **DepositPool** | [`0x94924D59d37fd3fd1f6D5C5cEDA3a1F646e2ABe9`](https://testnet.snowtrace.io/address/0x94924D59d37fd3fd1f6D5C5cEDA3a1F646e2ABe9) | Holds deposited USDC; on-chain settlement target for withdrawals. |
+| **DepositPool** | [`0x1cC2CD89cBBdE1d1C53C80fC38AA44cADF819779`](https://testnet.snowtrace.io/address/0x1cC2CD89cBBdE1d1C53C80fC38AA44cADF819779) | Holds deposited USDC; on-chain settlement target for withdrawals. |
 
-## API endpoints
+### API endpoints
 
 | Service | URL | Purpose |
 |---|---|---|
@@ -44,7 +60,7 @@ cast call $USDC "faucetPerCallCap()(uint256)" --rpc-url $RPC
 cast call $USDC "faucetCooldownSeconds()(uint256)" --rpc-url $RPC
 
 # === DepositPool ===
-POOL=0x94924D59d37fd3fd1f6D5C5cEDA3a1F646e2ABe9
+POOL=0x1cC2CD89cBBdE1d1C53C80fC38AA44cADF819779
 
 # Approve the pool to spend USDC (one-time per (token, spender) per amount)
 cast send $USDC "approve(address,uint256)" $POOL 100000000 --rpc-url $RPC --private-key $YOUR_KEY

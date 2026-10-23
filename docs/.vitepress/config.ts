@@ -80,6 +80,8 @@ export default defineConfig({
         collapsed: false,
         items: [
           { text: 'Contract addresses & RPCs', link: '/reference/contracts' },
+          { text: 'Oracle & pricing', link: '/reference/oracle' },
+          { text: 'Proofs & custody', link: '/reference/proofs' },
           { text: 'Auth & request signing', link: '/reference/auth-signing' },
           { text: 'Error code catalog', link: '/reference/error-codes' },
         ],
@@ -87,7 +89,7 @@ export default defineConfig({
     ],
 
     footer: {
-      message: 'For developers building on testnet today. Mainnet contract addresses will be added at launch.',
+      message: 'Mainnet on Avalanche C-Chain. Testnet on Avalanche Fuji.',
       copyright: '© VistaPex',
     },
 

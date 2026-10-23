@@ -31,7 +31,7 @@ You can deposit *to* any trading_account_id, but you can only *withdraw from* an
 
 ```bash
 USDC=0x77816fef2E06a1c054F9CbdA3bF82De5D30f8FDA
-POOL=0x94924D59d37fd3fd1f6D5C5cEDA3a1F646e2ABe9
+POOL=0x1cC2CD89cBBdE1d1C53C80fC38AA44cADF819779
 RPC=https://api.avax-test.network/ext/bc/C/rpc
 
 # Approve 100 USDC for deposit (one-time, or do MAX_UINT256 to skip future approvals).
