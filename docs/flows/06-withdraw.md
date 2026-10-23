@@ -95,7 +95,7 @@ pending  →  failed      (settler ran out of gas, RPC down, etc.)
 ### Option C — on-chain directly
 
 ```bash
-POOL=0x94924D59d37fd3fd1f6D5C5cEDA3a1F646e2ABe9
+POOL=0x1cC2CD89cBBdE1d1C53C80fC38AA44cADF819779
 RPC=https://api.avax-test.network/ext/bc/C/rpc
 
 cast call $POOL "isWithdrawalSettled(uint256)(bool)" 1779526510 --rpc-url $RPC
